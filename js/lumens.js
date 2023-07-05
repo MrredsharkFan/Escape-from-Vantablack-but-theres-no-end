@@ -22,7 +22,7 @@ const LUM_UPG_DATA = {
 	},
 	3: {
 		title: "Lumens boost Mind/Strength XP gain",
-		unl() { return tmp.bw.gte(.5) },
+		unl() { return player.totalPhotons.gte(1e47) },
 		pref: "&times;",
 		cost(n) { return Decimal.pow(5, Decimal.pow(Math.PI, n).sub(1)).times(4/3*1e29) },
 		targ(r) { return r.div(4/3*1e29).max(1).log(5).plus(1).log(Math.PI).plus(1).floor() },
@@ -30,7 +30,7 @@ const LUM_UPG_DATA = {
 	},
 	4: {
 		title: "Mind & Strength add levels to Lumen Upgrade 3 & Photon Upgrade 9",
-		unl() { return tmp.bw.gte(.5) },
+		unl() { return player.totalPhotons.gte(1e47) },
 		pref: "+",
 		cost(n) { return Decimal.pow(5, Decimal.pow(4, n).sub(1)).times(3e38) },
 		targ(r) { return r.div(3e38).max(1).log(5).plus(1).log(4).plus(1).floor() },
@@ -38,7 +38,7 @@ const LUM_UPG_DATA = {
 	},
 	5: {
 		title: "Mind/Strength's secondary boost bases are increased by 1",
-		unl() { return tmp.bw.gte(.5) },
+		unl() { return player.totalPhotons.gte(1e47) },
 		pref: "+",
 		cost(n) { return Decimal.pow(5, Decimal.pow(5, n.root(2.32).div(n.gte(3)?1.0206:1)).sub(1)).times(5e54) },
 		targ(r) { return r.div(5e54).max(1).log(5).plus(1).log(5).times(r.gte(1e80)?1.0206:1).pow(2.32).plus(1).floor() },
