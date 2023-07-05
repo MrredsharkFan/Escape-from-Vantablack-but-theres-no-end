@@ -141,11 +141,7 @@ function gameLoop(diff, warped=false) {
 	if (player.totalPhotons.gte(1e85)) {
 		player.truePhotons = player.truePhotons.plus(tmp.tphs.times(diff));
 		player.reversalDiv = player.reversalDiv.plus(diff);
-		if (player.photons.eq(tmp.tph) || player.totalPhotons.eq(tmp.tph)) return;
-		player.photons = player.photons.div(player.reversalDiv.pow(diff));
-		player.totalPhotons = player.totalPhotons.div(player.reversalDiv.pow(diff));
-		player.revRateDiv = player.revRateDiv.times(player.reversalDiv.pow(diff));
-	}
+		}
 	player.currGameTime = new Date().getTime();
 }
 
