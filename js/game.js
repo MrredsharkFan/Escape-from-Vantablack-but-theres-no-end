@@ -18,7 +18,7 @@ var tabUnlocks = {
 	Main() { return true },
 	"Pair Production"() { return player.totalPhotons.gte(1e6) },
 	Lumens() { return player.totalPhotons.gte(1e16) },
-	Growth() { return player.totalPhotons.gte(1e50) },
+	Growth() { return player.totalPhotons.gte(1e47) },
 	"True Photonics"() { return player.totalPhotons.gte(1e85) },
 }
 
