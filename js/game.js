@@ -138,7 +138,7 @@ function gameLoop(diff, warped=false) {
 		if (player.mindStrengthAuto=="Mind") player.mindXP = player.mindXP.plus(tmp.msGM.times(Decimal.div(1, tmp.mnde2).lt(diff)?tmp.mnde2.times(diff):1));
 		else if (player.mindStrengthAuto=="Strength") player.strengthXP = player.strengthXP.plus(tmp.msGM.times(Decimal.div(1, tmp.mnde2).lt(diff)?tmp.mnde2.times(diff):1));
 	}		
-	if (player.reverseSceneActive) {
+	if (player.totalPhotons.gte(1e85)) {
 		player.truePhotons = player.truePhotons.plus(tmp.tphs.times(diff));
 		player.reversalDiv = player.reversalDiv.plus(diff);
 		if (player.photons.eq(tmp.tph) || player.totalPhotons.eq(tmp.tph)) return;
