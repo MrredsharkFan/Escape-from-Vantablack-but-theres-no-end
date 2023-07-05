@@ -1,12 +1,12 @@
 // haha pp
 
 function getNextPP() { // haha p- okay this joke's getting old :P
-	return Decimal.pow(4/3, tmp.tpp.pow(1.5)).times(1e8).div(tmp.stre).round();
+	return Decimal.pow(4/3, tmp.tpp.pow(1.45)).times(1e8).div(tmp.stre).round();
 }
 
 function gainPP() {
 	if (player.totalPhotons.lt(tmp.npp)) return;
-	let targ = player.totalPhotons.times(tmp.stre).div(1e8).max(1).log(4/3).root(1.5).plus(1).floor().sub(player.charge.abs());
+	let targ = player.totalPhotons.times(tmp.stre).div(1e8).max(1).log(4/3).root(1.45).plus(1).floor().sub(player.charge.abs());
 	let oldE = new Decimal(player.electrons);
 	player.electrons = player.electrons.max(targ.sub(player.positrons));
 	player.positrons = player.positrons.max(targ.sub(oldE));

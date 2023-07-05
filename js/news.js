@@ -59,6 +59,13 @@ const NEWS = [
 	"I feel like I'm going crazy. Are you crazy too? Is the news ticker making you crazy too?",
 	"Oh. I'm fired from the news ticker gig? But... but... but... please just let me write one more...",
 	"NO don't pull me away pleasdfczx lk;,'/",
+	"this game is now MINE - mrredsharkfan",
+	"what the hell am i doing",
+	"I HATE MAKING NEWS TICKERS X2",
+	"fictional googology sucks [but why are we talking this? plus, it isn't really that bad]",
+	"f",
+	"get above e80 photons! however, there's actually NO POINT",
+	"buffment one is the new googology"
 ]
 
 function getNewsSpeed() {

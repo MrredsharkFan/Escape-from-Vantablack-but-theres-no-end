@@ -1,5 +1,5 @@
 var divs = [null, null, "half", "thirds", "fourths", "fifths", "sixths", "sevenths", "eighths", "ninths", "tenths"];
-var uples = [null, null, "Double", "Triple", "Quadruple", "Quintuple", "Sextuple", "Septuple", "Octuple", "Nonuple", "Decuple"];
+var uples = [null, null, "Double", "Triple", "Quadruple", "Quintuple", "Sextuple", "Septuple", "Octuple", "Nonuple", "Decuple", "Undecuple", "Dodecuple", "Tridecuple", "Tetradecuple", "Pentadecuple"];
 var TOTAL_UPGS = 9;
 var UPG_DATA = {
 	rows: 3,
@@ -9,11 +9,11 @@ var UPG_DATA = {
 		3: [7,8,9],
 	},
 	1: {
-		req: 10,
+		req: 5,
 		title() { return tmp.u[6]?((tmp.u[6].gt(8)||!tmp.u[6].eq(tmp.u[6].round()))?("Divide the Photon interval by "+formatWhether(tmp.u[6].plus(2))):("Split the Photon interval in "+divs[tmp.u[6].plus(2).toNumber()])):"Split the Photon interval in half" },
 		pref: "&divide;",
 		cost(n) { return Decimal.pow(1.5, n.pow(1.5)).times(10).floor() },
-		targ(r) { return r.div(10).max(1).log(1.5).root(1.5).plus(1).floor() },
+		targ(r) { return r.div(5).max(1).log(1.5).root(1.5).plus(1).floor() },
 		eff(n) { return Decimal.pow((tmp.u[6]?tmp.u[6]:new Decimal(0)).plus(2), n) },
 	},
 	2: {
@@ -50,35 +50,35 @@ var UPG_DATA = {
 	},
 	6: {
 		req: 1e11,
-		title: "Add 1 to Photon Upgrade 1's base",
+		title: "Add 1 to Photon Upgrade 1's base, then power it by 1.5",
 		pref: "+",
 		cost(n) { return Decimal.pow(5, n.pow(4).times(6)).times(1e11).floor() },
 		targ(r) { return r.div(1e11).max(1).log(5).div(6).root(4).plus(1).floor() },
-		eff(n) { return n },
+		eff(n) { return Decimal.pow(n, 1.5) },
 	},
 	7: {
 		req: 1e12,
-		title: "Add 0.3 to Photon Upgrade 4's base effect",
+		title: "Add 0.5 to Photon Upgrade 4's base effect",
 		pref: "+",
 		cost(n) { return Decimal.pow(3, Decimal.pow(2.5, n).sub(1)).times(5e11).floor() },
 		targ(r) { return r.div(5e11).max(1).log(3).plus(1).log(2.5).plus(1).floor() },
-		eff(n) { return n.times(.3) },
+		eff(n) { return n.times(.5) },
 	},
 	8: {
 		req: 1e25,
-		title: "Add 1 to the bases of Photon Upgrades 3 & 5",
+		title: "Add 1 to the bases of Photon Upgrades 3 & 5, then power it by 1.5",
 		pref: "+",
 		cost(n) { return Decimal.pow(4, n.pow(5).times(2)).times(1e25).floor() },
 		targ(r) { return r.div(1e25).max(1).log(4).div(2).root(5).plus(1).floor() },
-		eff(n) { return n },
+		eff(n) { return Decimal.pow(n, 1.5) },
 	},
 	9: {
 		req: 1e40,
-		title: "Multiply Photon gain by 10",
+		title: "Multiply Photon gain by 15",
 		pref: "&times;",
 		cost(n) { return Decimal.pow(1e8, n.pow(2)).times(1e42).floor() },
 		targ(r) { return r.div(1e42).max(1).log(1e8).sqrt().plus(1).floor() },
-		eff(n) { return Decimal.pow(10, n) },
+		eff(n) { return Decimal.pow(15, n) },
 	},
 }
 

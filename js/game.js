@@ -18,8 +18,8 @@ var tabUnlocks = {
 	Main() { return true },
 	"Pair Production"() { return player.totalPhotons.gte(1e6) },
 	Lumens() { return player.totalPhotons.gte(1e16) },
-	Growth() { return tmp.bw.gte(.5) },
-	"True Photonics"() { return player.reverseSceneActive },
+	Growth() { return player.totalPhotons.gte(1e50) },
+	"True Photonics"() { return player.totalPhotons.gte(1e85) },
 }
 
 function loadGame() {

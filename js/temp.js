@@ -9,10 +9,10 @@ function updateTemp() {
 	tmp.tphs = Decimal.pow(1.01, player.truePhotBought-player.badTruePhotBought);
 	tmp.lsel = getLSel(player.truePhotons.floor());
 	
-	tmp.tph = new Decimal("4e84");
+	tmp.tph = new Decimal("1e8888888");
 	tmp.bw = percent(player.totalPhotons);
 	tmp.phr = NaNCheck(player.photons.sub(player.prevPhotons).div(player.prevDiff).max(player.reverseSceneActive?(-1/0):0), true);
-	tmp.lum = tmp.phr.div(1.12e16).abs();
+	tmp.lum = tmp.phr.div(1e16).abs();
 	tmp.lumEff = getLumensEff();
 	
 	tmp.mind = player.mindXP.plus(1).log(5).floor();

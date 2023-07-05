@@ -48,7 +48,8 @@ const CUT_DATA = {
 		"The entire multiverse will be perfect! The sins of the multiverse will disappear before your very eyes!",
 		"Well then, let our reign begin! Shall we go, partner?",
 		"...",
-		"",
+		"wait, there shouldn't be an extension",
+		""
 	],
 	3: [
 		"Wh...",
