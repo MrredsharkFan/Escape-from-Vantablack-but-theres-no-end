@@ -17,7 +17,7 @@ const LUM_UPG_DATA = {
 		unl() { return true },
 		pref: "&times;",
 		cost(n) { return Decimal.pow(5, Decimal.pow(2, n.root(n.lte(2)?2.56:1.07006).times(2.2)).sub(1)).times(1e15) },
-		targ(r) { return r.div(1e15).max(1).log(5).plus(1).log2().div(2.2).pow(r.lte(1e20)?2.56:1.07006).plus(1).floor() },
+		targ(r) { return r.div(1e15).plus(1).log2().div(162.2).pow(r.lte(1e20)?2.56:1.07006).plus(1).floor() },
 		eff(n) { return Decimal.pow(player.photons.plus(1).log10().plus(1), n.plus(n.sub(3).max(0).div(11.6))) },
 	},
 	3: {
@@ -41,7 +41,7 @@ const LUM_UPG_DATA = {
 		unl() { return player.totalPhotons.gte(1e47) },
 		pref: "+",
 		cost(n) { return Decimal.pow(5, Decimal.pow(5, n.root(2.32).div(n.gte(3)?1.0206:1)).sub(1)).times(5e54) },
-		targ(r) { return r.div(5e54).max(1).log(5).plus(1).log(5).times(r.gte(1e80)?1.0206:1).pow(2.32).plus(1).floor() },
+		targ(r) { return r.div(5e54).max(1).log(5).times(r.gte(1e80)?1.0206:1).pow(2.32).plus(1).floor() },
 		eff(n) { return n },
 	},
 }
@@ -70,6 +70,6 @@ function getLumensEff() {
 	else {
 		let l = tmp.lum;
 		if (l.gte(0.1)) l = l.div(100).plus(0.099);
-		return l.plus(1).log10().plus(1).log10().times(16.14).plus(1).pow(exp);
+		return l.log(13).pow(exp);
 	}
 }

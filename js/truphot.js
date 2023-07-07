@@ -16,9 +16,9 @@ function getTruPhotReq() {
 }
 
 function getTPHRows() {
-	return 1
+	return 2
 }
 
 function getTPHCols() {
-	return 1
+	return 2
 }
