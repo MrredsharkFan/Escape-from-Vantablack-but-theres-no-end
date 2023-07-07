@@ -158,7 +158,7 @@
 			</div>
 			<div v-if="tab=='True Photonics'">
 				<span class="grand nohover">You have {{formatWhole(player.truePhotons)}} True Photons, which are multiplying Photon gain by {{format(tmp.tphe)}}<br><br>
-				Current Boost Effect: Increase the True Photon effect exponent by {{format(Decimal.pow(1.2, player.truePhotBought).sub(Decimal.pow(1.4, player.badTruePhotBought)).times(100))}}% & increase its gain speed by {{format(Decimal.pow(1.01, player.truePhotBought-player.badTruePhotBought).sub(1).times(100))}}%</span><br><br><br>
+				Current Boost Effect: Increase the True Photon effect exponent by {{format(Decimal.pow(1.2, player.truePhotBought).sub(Decimal.pow(1.4, player.badTruePhotBought)).times(100))}}% & increase its base gain speed [real effect is ^0.3] by {{format(Decimal.pow(1.01, player.truePhotBought-player.badTruePhotBought).sub(1).times(100))}}%</span><br><br><br>
 				<table>
 					<tr v-for="r in tmp.tphr">
 						<td v-for="i in tmp.tphc"><button class="grand true_photonics unlocked title" v-bind:style="{filter: ('invert('+(tmp.bw.gte(0.5)?(tmp.lsel==(i+5*(r-1))?'1':'0'):(tmp.lsel==(i+5*(r-1))?'0':'1'))+')')}" v-on:click="truePhotonBtn(i+5*(r-1))">{{(tmp.lsel==(i+5*(r-1)))?"+":"-"}}</button></td>

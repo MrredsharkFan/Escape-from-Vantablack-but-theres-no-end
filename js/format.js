@@ -99,7 +99,7 @@ function NaNCheck(x, d=false) {
 	}
 }
 
-//hey vorona, your notations are so tasty >:)
+//hey vorona, your notations are so tasty >:) eiorfoweifweofejfioewfweoijef
 function t1format(x,mult=false,y) {
 	let ills = ['','M','B','T','Qa','Qi','Sx','Sp','Oc','No']
 	let t1ones = ["","U","D","T","Qa","Qi","Sx","Sp","Oc","No"]
