@@ -65,6 +65,7 @@ const NEWS = [
 	"fictional googology sucks [but why are we talking this? plus, it isn't really that bad]",
 	"f",
 	"get above e80 photons! however, there's actually NO POINT",
+	"wth true photons longablity easy",
 	"buffment one is the new googology"
 ]
 

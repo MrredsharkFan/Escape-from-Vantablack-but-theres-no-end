@@ -9,7 +9,7 @@ function updateTemp() {
 	tmp.tphs = Decimal.pow(1.01, player.truePhotBought-player.badTruePhotBought);
 	tmp.lsel = getLSel(player.truePhotons.floor());
 	
-	tmp.tph = new Decimal("1e8888888");
+	tmp.tph = new Decimal("ee308.254");
 	tmp.bw = percent(player.totalPhotons);
 	tmp.phr = NaNCheck(player.photons.sub(player.prevPhotons).div(player.prevDiff).max(player.reverseSceneActive?(-1/0):0), true);
 	tmp.lum = tmp.phr.div(1e16).abs();
@@ -51,4 +51,7 @@ function updateTemp() {
 	tmp.itv = Decimal.div(2, tmp.u[1]);
 }
 
-function percent(x) { return x.max(1).log(tmp.tph).min(1) }
+function percent(x) { 
+	let y = new Decimal(x);
+	y = Decimal.log10(Decimal.log10(y)).div(Decimal.log10(Decimal.log10(tmp.tph)))
+	return y}
