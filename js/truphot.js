@@ -16,16 +16,9 @@ function getTruPhotReq() {
 }
 
 function getTPHRows() {
-	let b = player.truePhotBought+player.badTruePhotBought;
-	if (b>=25) return 3;
-	else if (b>=10) return 2;
-	else return 1;
+	return 1
 }
 
 function getTPHCols() {
-	let b = player.truePhotBought+player.badTruePhotBought;
-	if (b>=15) return 5;
-	else if (b>=5) return 4;
-	else if (b>=2) return 3;
-	else return 2;
+	return 1
 }

@@ -53,5 +53,8 @@ function updateTemp() {
 
 function percent(x) { 
 	let y = new Decimal(x);
+	if (y.lte(100)){
+		y = Decimal("100")
+	}
 	y = Decimal.log10(Decimal.log10(y)).div(Decimal.log10(Decimal.log10(tmp.tph)))
 	return y}
