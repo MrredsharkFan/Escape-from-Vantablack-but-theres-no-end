@@ -3,6 +3,7 @@ const LUM_UPG_DATA = {
 	rows: 1,
 	rowData: {
 		1: [1,2,3,4,5],
+		2: [6],
 	},
 	1: {
 		title: "Raise the Lumen effect",
@@ -10,7 +11,7 @@ const LUM_UPG_DATA = {
 		pref: "^",
 		cost(n) { return Decimal.pow(2, Decimal.pow(5, n).sub(1)).div(100) },
 		targ(r) { return r.times(100).max(1).log2().plus(1).log(5).plus(1).floor() },
-		eff(n) { return n.plus(1).sqrt() },
+		eff(n) { return n.plus(1.25).pow(n.plus(25).sqrt(n)) },
 	},
 	2: {
 		title: "Photons boost their own gain",
@@ -43,6 +44,14 @@ const LUM_UPG_DATA = {
 		cost(n) { return Decimal.pow(5, Decimal.pow(5, n.root(2.32).div(n.gte(3)?1.0206:1)).sub(1)).times(5e54) },
 		targ(r) { return r.div(5e54).max(1).log(5).times(r.gte(1e80)?1.0206:1).pow(2.32).plus(1).floor() },
 		eff(n) { return n },
+	},
+	6: {
+		title: "True Photon effect's good photons act +0.5x more",
+		unl() { return player.totalPhotons.gte("ee15") },
+		pref: "+",
+		cost(n) { return Decimal.pow(n.plus(2).pow(n.plus(2).pow(n.plus(2).pow(16)))) },
+		targ(r) { return r.log10().log10().log10() },
+		eff(n) { return n.div(0.5) },
 	},
 }
 
