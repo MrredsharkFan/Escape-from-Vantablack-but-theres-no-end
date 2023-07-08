@@ -139,7 +139,7 @@ function gameLoop(diff, warped=false) {
 		else if (player.mindStrengthAuto=="Strength") player.strengthXP = player.strengthXP.plus(tmp.msGM.times(Decimal.div(1, tmp.mnde2).lt(diff)?tmp.mnde2.times(diff):1));
 	}		
 	if (player.totalPhotons.gte(1e85)) {
-		player.truePhotons = player.truePhotons.plus(tmp.tphs.times(diff).pow(0.3));
+		player.truePhotons = player.truePhotons.plus(tmp.tphs.times(diff).pow(0.3)).div(20);
 		player.reversalDiv = player.reversalDiv.plus(diff);
 		}
 	player.currGameTime = new Date().getTime();

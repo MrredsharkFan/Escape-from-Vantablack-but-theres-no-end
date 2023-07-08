@@ -11,7 +11,7 @@ function updateTemp() {
 	
 	tmp.tph = new Decimal("ee308.254");
 	tmp.bw = percent(player.totalPhotons);
-	tmp.phr = NaNCheck(player.photons.sub(player.prevPhotons).div(player.prevDiff).max(player.reverseSceneActive?(-1/0):0), true);
+	tmp.phr = player.photons;
 	tmp.lum = tmp.phr.div(1e16).abs();
 	tmp.lumEff = getLumensEff();
 	
