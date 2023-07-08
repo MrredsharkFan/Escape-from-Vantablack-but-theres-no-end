@@ -1,6 +1,6 @@
-const TOTAL_LUM_UPGS = 5;
+const TOTAL_LUM_UPGS = 6;
 const LUM_UPG_DATA = {
-	rows: 1,
+	rows: 2,
 	rowData: {
 		1: [1,2,3,4,5],
 		2: [6],

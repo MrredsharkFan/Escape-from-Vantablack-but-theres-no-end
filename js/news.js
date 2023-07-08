@@ -66,7 +66,24 @@ const NEWS = [
 	"f",
 	"get above e80 photons! however, there's actually NO POINT",
 	"wth true photons longablity easy",
-	"buffment one is the new googology"
+	"buffment one is the new googology",
+	"new updat",
+	"why no multi fork i need extra notations on communitree but i cant",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"e",
+	"rare e | 1/11 chance of appearing!",
+	"fu",
+	"gu",
+	"hu",
+	"i",
 ]
 
 function getNewsSpeed() {
